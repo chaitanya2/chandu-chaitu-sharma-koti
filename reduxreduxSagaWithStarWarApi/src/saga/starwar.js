@@ -2,9 +2,9 @@ import { all, put, takeLatest } from "redux-saga/effects";
 import { ADD_BACKEND_DATA, ADD_BACKEND_DATA_SUCCESS, ADD_BACKEND_DATA_FAILURE  } from "../contants";
 import Axios from "axios";
 
-export function* getDashboard() {
+export function* getDashboard(params) {
   try {
-    const response = yield Axios.get('https://swapi.co/api/people/1');
+    const response = yield Axios.get(`https://swapi.co/api/people/${params.payload.number}`);
     yield put({
       type: ADD_BACKEND_DATA_SUCCESS,
       payload: response.data

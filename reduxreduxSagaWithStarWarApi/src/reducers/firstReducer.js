@@ -1,4 +1,4 @@
-import { ADD_DATA, ADD_NEW_DATA, ADD_BACKEND_DATA_SUCCESS } from '../contants';
+import { ADD_DATA, ADD_NEW_DATA, ADD_BACKEND_DATA_SUCCESS, ADD_BACKEND_DATA } from '../contants';
 
 const init = {
   dataSource: [
@@ -53,6 +53,8 @@ const firstReducer = (state = init, action) => {
         ...state,
         dataSource: [...state.dataSource, { ...action.payload.addData }]
       };
+    case ADD_BACKEND_DATA:
+      return {...state , ...action.payload}
     case ADD_BACKEND_DATA_SUCCESS:
         return { ...state, starwardata : { ...action.payload} };
     default:

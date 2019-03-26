@@ -60,7 +60,7 @@ class Redxflow extends React.Component {
   };
 
   addBackendData = () => {
-    this.props.dispatch(addBackendData())
+    this.props.dispatch(addBackendData({number : 2}))
   }
 
   addData = () => {

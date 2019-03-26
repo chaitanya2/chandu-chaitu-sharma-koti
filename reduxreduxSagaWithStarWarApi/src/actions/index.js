@@ -14,9 +14,10 @@ const addNewData = payload => {
   };
 };
 
-const addBackendData = () => {
+const addBackendData = payload => {
   return {
-    type: ADD_BACKEND_DATA
+    type: ADD_BACKEND_DATA,
+    payload : payload
   }
 }
 
